@@ -19,7 +19,7 @@ const ProductCard = ({ product }) => {
     }
 
     const Remove = (id) => {
-        console.log(id)
+        // console.log(id)
         cartdispatch({ type: "Remove", payload: id })
     }
 
@@ -49,14 +49,12 @@ const ProductCard = ({ product }) => {
                     </div>} */}
 
                     {cart.some(data => data.id == id) ?
-                        (<div class="col text-center">
-                            {console.log('ac')}
+                        (<div className="col text-center">
                             <Button onClick={() => Remove(id)}>
                                 RemoveCart
                             </Button>
                         </div>)
-                        : (<div class="col text-center">
-                            {console.log('dc')}
+                        : (<div className="col text-center">
                             <Button onClick={AddCart} className="addtocart">
                                 Add Cart
                             </Button>

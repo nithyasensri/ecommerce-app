@@ -16,12 +16,15 @@ const Product = () => {
 
 
     const fetchProducts = async () => {
-        const response = await axios.get('https://dummyjson.com/products')
-        const data = await response.data.products;
-        console.log(data)
-        // const data = response.data
-        dispatch({ type: "Set-Products", payload: data })
-    }
+        try {
+            const response = await axios.get('https://dummyjson.com/products');
+            const data = response.data.products;
+            console.log(data); // Check if data is being fetched
+            dispatch({ type: "Set-Products", payload: data });
+        } catch (error) {
+            console.error("Error fetching products:", error);
+        }
+    };
 
     useEffect(() => {
         console.log('aa')
@@ -73,7 +76,8 @@ const Product = () => {
                 </Col>
                 <Col xs="12" sm="9">
                     <Row>
-                        {filteredProductsBySearch.map((data, index) => <ProductCard key={index} product={data} />)}
+                        {filteredProductsBySearch.length > 0 ? (filteredProductsBySearch.map((data, index) => <ProductCard key={index} product={data} />))
+                        :<>No products found</>}
                     </Row>
                   
                 </Col>
