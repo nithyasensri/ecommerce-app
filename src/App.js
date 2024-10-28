@@ -18,7 +18,7 @@ function App() {
       <ProductProvider>
         <CartProvider>
           <CartProvidercart>
-          <Router  basename="/ecom-app">
+          <Router>
             <Row xs="12" className='main-row' style={{ 'background': '#0289cc'}}>
               <Col xs="12" sm={{ offset: 0, size: 12 }} md={{offset: 0, size: 12}} lg={{ offset: 1, size: 10 }} >
                 <Row>
@@ -34,7 +34,7 @@ function App() {
             </Row>
             <Row>
               <Routes>
-                <Route path='http://nithyasensri.github.io/ecom-ap' element={<Product />} />
+                <Route path='https://nithyasensri.github.io/ecom-app/' element={<Product />} />
                 <Route path='/product/:productId' element={<ProductDetail />} />
                 <Route path='/cart' element={<Cart />} />
               </Routes>
