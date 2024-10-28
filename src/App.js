@@ -18,7 +18,7 @@ function App() {
       <ProductProvider>
         <CartProvider>
           <CartProvidercart>
-          <Router  basename="/ecommerce-app">
+          <Router  basename="/ecom-app">
             <Row xs="12" className='main-row' style={{ 'background': '#0289cc'}}>
               <Col xs="12" sm={{ offset: 0, size: 12 }} md={{offset: 0, size: 12}} lg={{ offset: 1, size: 10 }} >
                 <Row>
