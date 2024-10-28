@@ -1,5 +1,5 @@
 
-import { HashRouter,BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar';
 import Product from './pages/Product';
 import Cart from './pages/Cart'
@@ -18,7 +18,7 @@ function App() {
       <ProductProvider>
         <CartProvider>
           <CartProvidercart>
-          <HashRouter  basename="/ecom-app">
+          <Router  basename="/ecom-app">
             <Row xs="12" className='main-row' style={{ 'background': '#0289cc'}}>
               <Col xs="12" sm={{ offset: 0, size: 12 }} md={{offset: 0, size: 12}} lg={{ offset: 1, size: 10 }} >
                 <Row>
@@ -34,12 +34,12 @@ function App() {
             </Row>
             <Row>
               <Routes>
-                <Route path='/' element={<Product />} />
+                <Route path='http://nithyasensri.github.io/ecom-ap' element={<Product />} />
                 <Route path='/product/:productId' element={<ProductDetail />} />
                 <Route path='/cart' element={<Cart />} />
               </Routes>
             </Row>
-          </HashRouter>
+          </Router>
           </CartProvidercart>
         </CartProvider>
       </ProductProvider>
