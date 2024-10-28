@@ -18,11 +18,13 @@ const Product = () => {
     const fetchProducts = async () => {
         const response = await axios.get('https://dummyjson.com/products')
         const data = await response.data.products;
+        console.log(data)
         // const data = response.data
         dispatch({ type: "Set-Products", payload: data })
     }
 
     useEffect(() => {
+        console.log('aa')
         fetchProducts()
     }, [])
 
